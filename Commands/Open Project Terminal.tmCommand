@@ -10,7 +10,7 @@ cat &lt;&lt;'RUBYEOF' &gt; /tmp/ruby-amp-$$.rb
 require 'rubygems'
 require 'appscript'
 include Appscript
-term = app("Terminal")
+term = app("iTerm")
 term.activate
 term.do_script "cd #{ENV['TM_PROJECT_DIRECTORY'].to_s.inspect}"
 
