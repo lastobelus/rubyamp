@@ -20,7 +20,9 @@ module RubyAMP::PrettyAlign
     input.split(/\n/, -1).each do |line|
       split_line = line.scan(/(.+?)(#{separator || COMMON_SEPARATORS})(.+?|$)/)
       split_line = [[line]] if split_line.empty?
-      split_line[-1][-1] << line[split_line.to_s.size..-1] unless split_line.to_s.size == line.size
+      unless split_line.flatten.join.size == line.size
+        split_line[-1][-1] << line[split_line.flatten.join.size..-1]
+      end
       seps           = split_line.map { |e| e[1] }
       max_separators = seps.size if seps.size > max_separators
       lines      << split_line

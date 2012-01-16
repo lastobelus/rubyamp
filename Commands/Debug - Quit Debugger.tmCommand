@@ -16,7 +16,7 @@ end
 
 RUBYEOF
 
-${TM_RUBY_1_8:-ruby} /tmp/ruby-amp-$$.rb; exit_status=$?; rm /tmp/ruby-amp-$$.rb; exit $exit_status</string>
+{TM_RUBY:-ruby} -wKU /tmp/ruby-amp-$$.rb; exit_status=$?; rm /tmp/ruby-amp-$$.rb; exit $exit_status</string>
 	<key>fallbackInput</key>
 	<string>line</string>
 	<key>input</key>
