@@ -11,7 +11,7 @@ cat &lt;&lt;'RUBYEOF' &gt; /tmp/ruby-amp-$$.rb
   
 RUBYEOF
 
-{TM_RUBY:-ruby} -wKU /tmp/ruby-amp-$$.rb; exit_status=$?; rm /tmp/ruby-amp-$$.rb; exit $exit_status</string>
+${TM_RUBY:-ruby} -wKU /tmp/ruby-amp-$$.rb; exit_status=$?; rm /tmp/ruby-amp-$$.rb; exit $exit_status</string>
 	<key>fallbackInput</key>
 	<string>word</string>
 	<key>input</key>
