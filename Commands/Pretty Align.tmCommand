@@ -31,8 +31,6 @@ ${TM_RUBY:-ruby} -wKU /tmp/ruby-amp-$$.rb; exit_status=$?; rm /tmp/ruby-amp-$$.r
 	<string>none</string>
 	<key>input</key>
 	<string>selection</string>
-	<key>keyEquivalent</key>
-	<string>^~l</string>
 	<key>name</key>
 	<string>Pretty Align</string>
 	<key>output</key>
