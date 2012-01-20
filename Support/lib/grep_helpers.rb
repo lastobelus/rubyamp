@@ -26,6 +26,7 @@ class Grepper
   attr_accessor :fixed_strings
   attr_writer :query_highlight_regexp
   attr_accessor :case_sensitive
+  attr_accessor :debug
   
   def query_highlight_regexp
     @query_highlight_regexp || query_regexp
@@ -67,7 +68,6 @@ class Grepper
   
   def parse_regexp(regexp)
     self.query = regexp
-    # puts command
   end
   
   def initialize(name, options = {})
@@ -77,6 +77,7 @@ class Grepper
     self.exclude_files = [options[:exclude_files] || %w[*.log *.log*]].compact.flatten
     @include_files = [options[:include_files]].compact.flatten || []
     self.case_sensitive = true
+    self.debug = false
   end
 
   def bail(message)
@@ -97,11 +98,15 @@ class Grepper
   end
   
   def matches
-    return @matches if @matches
+    return @matches if defined? @matches
     
+    if self.debug
+      puts "finding matches using query: #{self.query}"
+      puts "command: #{command.inspect}"
+    end
     @matches = []
     IO.popen(command) do |pipe|
-      last_path = path = i = nil
+      last_path = path = nil
       pipe.each_with_index do |line, i|
         if line =~ /^(Binary file )(.*?) matches/
           prefix, file = $1, $2
@@ -157,7 +162,7 @@ class Grepper
   end
   
   def command
-    include_param = include_files.map{|f| "--include='#{f}'"} * " "
+    include_param = include_files.compact.flatten.map{|f| "--include='#{f}'"} * " "
     fixed_strings_param = fixed_strings ? "--fixed-strings" : "-E"
     case_sensitive_param = case_sensitive ? "" : "--ignore-case"  
     exclude_param = exclude_files.map{|f| "--exclude='#{f}'"} * " "
@@ -230,9 +235,8 @@ class GrepperHTML < Grepper
       <table>
     HTML
     
-    last_path = path = i = nil
+    last_path = path = nil
     matches.each_with_index do |match, i|
-
       if match[:binary_file]
         puts <<-HTML
           <tr class="binary #{ 'odd' unless i%2==0 }">
@@ -267,10 +271,10 @@ class GrepperHTML < Grepper
       HTML
       last_path = path
     end
-    if i
+    unless matches.empty?
       # A paragraph inside the table ends up at the top even though it's output
       # at the end. Something of a hack :)
-      i += 1
+      i = matches.length
       puts <<-HTML
         <p>#{i} matching line#{i==1 ? '' : 's'}:</p>
         #{html_for_resize_table}
