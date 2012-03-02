@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>commands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>selectParagraph:</string>
+		</dict>
+		<dict>
+			<key>argument</key>
+			<dict>
+				<key>beforeRunningCommand</key>
+				<string>nop</string>
+				<key>command</key>
+				<string>#!/usr/bin/env sh
+cat &lt;&lt;'RUBYEOF' &gt; /tmp/ruby-amp-$$.rb
+
+require "#{ENV['TM_SUPPORT_PATH']}/lib/ui.rb"
+require "#{ENV["TM_BUNDLE_SUPPORT"]}/lib/ruby_tm_helpers.rb"
+require "#{ENV["TM_BUNDLE_SUPPORT"]}/lib/ruby_amp.rb"
+include RubyAMP::PrettyAlign
+
+input = $stdin.read
+if input.empty?
+  puts "Please select something"
+  exit_show_tool_tip
+end
+separator = TextMate::UI.request_string(:title =&gt; "Pretty Align", :prompt =&gt; "Blank, a string, or a regexp (like /=.?/)", :default =&gt; "")
+
+$stdout &lt;&lt; pretty_align(input,separator)
+
+
+
+RUBYEOF
+
+${TM_RUBY:-ruby} -wKU /tmp/ruby-amp-$$.rb; exit_status=$?; rm /tmp/ruby-amp-$$.rb; exit $exit_status</string>
+				<key>fallbackInput</key>
+				<string>none</string>
+				<key>input</key>
+				<string>selection</string>
+				<key>keyEquivalent</key>
+				<string>^~l</string>
+				<key>name</key>
+				<string>Pretty Align</string>
+				<key>output</key>
+				<string>replaceSelectedText</string>
+				<key>uuid</key>
+				<string>03A3B1E8-67D9-4BED-8732-FEEE335EE089</string>
+			</dict>
+			<key>command</key>
+			<string>executeCommandWithOptions:</string>
+		</dict>
+	</array>
+	<key>keyEquivalent</key>
+	<string>^~l</string>
+	<key>name</key>
+	<string>Pretty Align (first expand selection)</string>
+	<key>uuid</key>
+	<string>3878C619-EA2A-4E7D-91BF-A3DBD56D4C85</string>
+</dict>
+</plist>

@@ -33,7 +33,7 @@ STDOUT &lt;&lt; e_sn(text[-1..-1])
 
 RUBYEOF
 
-${TM_RUBY:-ruby} /tmp/ruby-amp-$$.rb; exit_status=$?; rm /tmp/ruby-amp-$$.rb; exit $exit_status
+${TM_RUBY:-ruby} -wKU /tmp/ruby-amp-$$.rb; exit_status=$?; rm /tmp/ruby-amp-$$.rb; exit $exit_status
 </string>
 	<key>fallbackInput</key>
 	<string>none</string>

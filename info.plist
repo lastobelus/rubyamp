@@ -20,6 +20,10 @@
 			<string>3E287237-8082-4068-8B31-0F814338710E</string>
 			<string>90E13791-96CC-4380-8344-48EB84D9E616</string>
 			<string>6472BE24-D59B-46E3-A2AC-8B6B15621C9D</string>
+			<string>5D2A7A56-30A0-4161-92F5-DF949DC19957</string>
+			<string>EF432C84-A45E-4133-870F-9D5EEB4F649E</string>
+			<string>8D27E812-E9BE-4E83-95AE-483D1761CA40</string>
+			<string>54B9D5CA-1056-4B05-809E-0189987A88E2</string>
 		</array>
 		<key>submenus</key>
 		<dict>
@@ -42,6 +46,7 @@
 			<dict>
 				<key>items</key>
 				<array>
+					<string>3878C619-EA2A-4E7D-91BF-A3DBD56D4C85</string>
 					<string>03A3B1E8-67D9-4BED-8732-FEEE335EE089</string>
 					<string>325F93B3-F7BA-40BC-AFD0-A668EE8F9B8F</string>
 					<string>DAC6CEE2-DD88-4803-86D8-793201742DDB</string>
@@ -53,7 +58,6 @@
 			<dict>
 				<key>items</key>
 				<array>
-					<string>71AF16CA-FEFF-456D-9915-50C964F2CDE9</string>
 					<string>17830567-BC2D-4B99-B20F-F68903DA83A2</string>
 					<string>E2D2F075-81CE-4604-9813-A08145995F96</string>
 					<string>23D5F39E-73CA-43FC-90B3-18BDBEDDD56B</string>
@@ -74,7 +78,6 @@
 					<string>1E57B267-C3EC-4F67-84DE-3781D43DC88B</string>
 					<string>11EA78D7-D7BF-4B53-92D2-828A9B158529</string>
 					<string>0ECC400E-11C0-4668-936B-25153FDC41BC</string>
-					<string>611AA1C6-633B-4BAB-B941-0E0F37673299</string>
 					<string>EE3408D4-BDCB-45BA-BED6-C0A4A9E0EC09</string>
 				</array>
 				<key>name</key>
@@ -101,7 +104,6 @@
 		<string>1E57B267-C3EC-4F67-84DE-3781D43DC88B</string>
 		<string>11EA78D7-D7BF-4B53-92D2-828A9B158529</string>
 		<string>0ECC400E-11C0-4668-936B-25153FDC41BC</string>
-		<string>611AA1C6-633B-4BAB-B941-0E0F37673299</string>
 		<string>EE3408D4-BDCB-45BA-BED6-C0A4A9E0EC09</string>
 		<string>C049C02C-2ED6-44AF-A228-EDB47CAF6F8D</string>
 		<string>E5691206-A639-4536-989C-F227B9AB14B0</string>
@@ -118,6 +120,7 @@
 		<string>7BEFC54B-D3FD-4B88-916A-2E80304D5CD2</string>
 		<string>3E287237-8082-4068-8B31-0F814338710E</string>
 		<string>6472BE24-D59B-46E3-A2AC-8B6B15621C9D</string>
+		<string>3878C619-EA2A-4E7D-91BF-A3DBD56D4C85</string>
 		<string>03A3B1E8-67D9-4BED-8732-FEEE335EE089</string>
 		<string>325F93B3-F7BA-40BC-AFD0-A668EE8F9B8F</string>
 		<string>DAC6CEE2-DD88-4803-86D8-793201742DDB</string>
