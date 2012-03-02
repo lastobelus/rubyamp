@@ -47,8 +47,6 @@ ${TM_RUBY:-ruby} /tmp/ruby-amp-$$.rb; exit_status=$?; rm /tmp/ruby-amp-$$.rb; ex
 	<string>none</string>
 	<key>input</key>
 	<string>selection</string>
-	<key>keyEquivalent</key>
-	<string>^,</string>
 	<key>name</key>
 	<string>Swap around comma</string>
 	<key>output</key>
